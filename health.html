@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthKart</title>
+    <link rel="shortcut icon" href="https://www.healthkart.com/favicon.ico" />
+    <style>
+      #headerDiv {
+        padding: 16px 40px;
+        display: flex;
+      }
+      #loginButton {
+        background-color: #0dccc5;
+        border-radius: 4px;
+        width: 100px;
+        height: 45px;
+        align-content: center;
+        padding: 10px;
+        text-align: center;
+        border: none;
+        color: #fff;
+        font-family: Montserrat, sans-serif;
+        margin-left: 70px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      #searchInput {
+        width: 700px;
+        height: 45px;
+        border-radius: 8px;
+        margin-left: 25px;
+        background-color: #f7f7f7;
+        font-family: Montserrat, sans-serif;
+        border: none;
+        font-size: 16px;
+        padding: 5px 45px;
+      }
+
+      td {
+        padding: 0px 30px;
+        font-family: Montserrat, sans-serif;
+        font-size: 14px;
+        text-align: center;
+      }
+      td:hover {
+        color: #00a0a0;
+        cursor: pointer;
+      }
+      table {
+        margin-left: 40px;
+      }
+      #selectorHead {
+        padding: 10px 30px;
+        align-items: center;
+      }
+      .dropbtn {
+        padding: 12px;
+        font-family: Montserrat, sans-serif;
+        font-size: 16px;
+        background-color: white;
+        border-radius: 2px;
+        border: 1px solid grey;
+        cursor: pointer;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content p {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content p:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+
+      .addHead {
+        background-color: rgb(239, 251, 252);
+        padding: 10px 30px;
+      }
+      .addHead span {
+        font-family: Montserrat, sans-serif;
+        margin-left: 36%;
+      }
+
+      .caraoussel {
+        /* height: 50px; */
+      }
+
+      .product-card {
+        border: 1px solid #ddd;
+        padding: 10px;
+        width: 23%;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      .inWishlist {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+
+      .product-image {
+        width: 90%;
+        object-fit: cover;
+      }
+
+      .product-name {
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .product-price {
+        margin: 15px;
+      }
+
+      .original-price {
+        margin: 15px;
+        color: #aeb1bd;
+        text-decoration: line-through;
+      }
+
+      .price-tag {
+        display: flex;
+      }
+
+      .product-offer {
+        margin: 15px;
+        color: green;
+      }
+
+      .add-to-cart {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 90%;
+        margin: 0 auto;
+        transition: background-color 0.3s ease;
+        border-radius: 8px;
+      }
+
+      .add-to-cart:hover {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="headerDiv">
+      <img
+        src="./images/healthkart logo.png"
+        alt="logo"
+        width="180px"
+        height="45px"
+      />
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="search for products & brands"
+      />
+      <button id="loginButton">Login</button>
+      <img
+        src="./images/cart_img.jpg"
+        alt="cart"
+        style="width: 50px; height: 45px; margin-left: 70px"
+      />
+    </div>
+
+    <div id="selectorHead">
+      <table>
+        <tr>
+          <td>
+            <div class="dropdown">
+              <button class="dropbtn">Choose By Category</button>
+              <div class="dropdown-content">
+                <p>Sports Nutrition</p>
+                <p>Vitamins & Supplements</p>
+                <p>Ayurveda & Herbs</p>
+                <p>Health Food & Drinks</p>
+              </div>
+            </div>
+          </td>
+          <td>Best Seller</td>
+          <td>Brands</td>
+          <td>Offer Zone</td>
+          <td>Blogs</td>
+          <td>Gift Card</td>
+          <td>Customer Support</td>
+          <td>Store Locator</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="addHead">
+      <span>India's Largest D2C Nutrition Platform</span>
+    </div>
+
+    <div class="caraoussel">
+      <img src="https://img2.hkrtcdn.com/29747/bnr_2974641_o.jpg" alt="" />
+    </div>
+
+    <section class="featured products">
+      <h2>PRICE SLASH ALERT</h2>
+      <div class="container">
+        <div class="product-card">
+          <img
+            alt="inWishlist"
+            src="https://static1.hkrtcdn.com/hknext/static/media/common/variant/wishlist/heart.svg"
+            class="inWishlist"
+          />
+          <img
+            src="https://img9.hkrtcdn.com/26627/pck_2662628_c_s.jpg"
+            alt="Product 1"
+            class="product-image"
+          />
+          <div class="product-name">
+            MuscleBlaze Raw Whey Protein 80% 2.2 lb Unflavoured & Shaker Combo
+          </div>
+          <div class="price-tag">
+            <div class="product-price">₹1885</div>
+            <div class="original-price">2899</div>
+            <div class="product-offer">34% off</div>
+          </div>
+          <button class="add-to-cart">
+            <img
+              src="https://static1.hkrtcdn.com/hknext/static/media/common/cartNew.svg"
+              height="20px"
+              width="20px"
+            />Add to Cart
+          </button>
+        </div>
+        <div class="product-card">
+          <img
+            alt="inWishlist"
+            src="https://static1.hkrtcdn.com/hknext/static/media/common/variant/wishlist/heart.svg"
+            class="inWishlist"
+          />
+          <img
+            src="https://img4.hkrtcdn.com/29744/pck_2974313_c_s.jpg"
+            alt="Product 2"
+            class="product-image"
+          />
+          <div class="product-name">
+            MuscleBlaze Creatine Monohydrate100g & HealthKart Fish Oil 60
+            capsules combo
+          </div>
+          <div class="price-tag">
+            <div class="product-price">₹725</div>
+            <div class="original-price">2899</div>
+            <div class="product-offer">47% off</div>
+          </div>
+          <button class="add-to-cart">
+            <img
+              src="https://static1.hkrtcdn.com/hknext/static/media/common/cartNew.svg"
+              height="20px"
+              width="20px"
+            />Add to Cart
+          </button>
+        </div>
+        <div class="product-card">
+          <img
+            alt="inWishlist"
+            src="https://static1.hkrtcdn.com/hknext/static/media/common/variant/wishlist/heart.svg"
+            class="inWishlist"
+          />
+          <img
+            src="https://img3.hkrtcdn.com/20971/pck_2097062_c_s.jpg"
+            alt="Product 3"
+            class="product-image"
+          />
+          <div class="product-name">
+            HealthKart HK Vitals Biotin & Skin Radiance Collagen Combo
+          </div>
+          <div class="price-tag">
+            <div class="product-price">₹1099</div>
+            <div class="original-price">2899</div>
+            <div class="product-offer">31% off</div>
+          </div>
+          <button class="add-to-cart">
+            <img
+              src="https://static1.hkrtcdn.com/hknext/static/media/common/cartNew.svg"
+              height="20px"
+              width="20px"
+            />Add to Cart
+          </button>
+        </div>
+        <div class="product-card">
+          <img
+            alt="inWishlist"
+            src="https://static1.hkrtcdn.com/hknext/static/media/common/variant/wishlist/heart.svg"
+            class="inWishlist"
+          />
+          <img
+            src="https://img4.hkrtcdn.com/29744/pck_2974363_c_s.jpg"
+            alt="Product 4"
+            class="product-image"
+          />
+          <div class="product-name">
+            MuscleBlaze MB-VITE Daily Multivitamin 30 Tabs & TrueBasics T Boost
+            60 tabs Combo
+          </div>
+          <div class="price-tag">
+            <div class="product-price">₹749</div>
+            <div class="original-price">2899</div>
+            <div class="product-offer">41% off</div>
+          </div>
+          <button class="add-to-cart">
+            <img
+              src="https://static1.hkrtcdn.com/hknext/static/media/common/cartNew.svg"
+              height="20px"
+              width="20px"
+            />Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
